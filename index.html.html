@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Descomplica Contábil | Educação Contábil e Financeira</title>
+  <style>
+    :root{
+      --primary:#17324d; --secondary:#1f7a70; --accent:#e7b94c;
+      --bg:#f5f7f9; --card:#fff; --text:#263746; --muted:#667788;
+      --shadow:0 10px 30px rgba(23,50,77,.09);
+    }
+    *{box-sizing:border-box} body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--text);background:var(--bg);line-height:1.6}
+    header{background:var(--primary);color:#fff;position:sticky;top:0;z-index:10;box-shadow:0 3px 15px rgba(0,0,0,.12)}
+    nav{max-width:1150px;margin:auto;padding:16px 22px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{font-size:1.25rem;font-weight:800}.brand span{display:block;font-size:.72rem;font-weight:400;opacity:.82}
+    nav a{color:#fff;text-decoration:none;margin-left:18px;font-size:.92rem}
+    .hero{background:linear-gradient(135deg,#17324d,#245d6c);color:#fff;padding:75px 22px}
+    .hero-inner{max-width:1150px;margin:auto;display:grid;grid-template-columns:1.15fr .85fr;gap:45px;align-items:center}
+    h1{font-size:clamp(2.2rem,5vw,4rem);line-height:1.05;margin:0 0 18px}
+    .hero p{font-size:1.12rem;max-width:680px;opacity:.92}
+    .search{margin-top:28px;display:flex;background:#fff;padding:7px;border-radius:12px;max-width:680px}
+    .search input{flex:1;border:0;outline:0;padding:15px;font-size:1rem;border-radius:8px}.search button{border:0;background:var(--secondary);color:#fff;padding:0 22px;border-radius:8px;font-weight:700;cursor:pointer}
+    .hero-card{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);padding:28px;border-radius:20px}
+    .hero-card h3{margin-top:0}.hero-card ul{padding-left:20px}
+    main{max-width:1150px;margin:auto;padding:55px 22px}.section-title{text-align:center;margin-bottom:32px}.section-title h2{font-size:2rem;margin:0 0 8px}.section-title p{color:var(--muted);margin:0}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.card{background:var(--card);padding:25px;border-radius:16px;box-shadow:var(--shadow);border:1px solid #e8edf1}.icon{font-size:2rem}.card h3{margin:10px 0 6px}.card p{color:var(--muted);margin-top:0}
+    .questions{display:grid;grid-template-columns:1fr 1fr;gap:16px}.question{background:#fff;border-radius:12px;padding:18px 20px;box-shadow:var(--shadow);cursor:pointer;border-left:4px solid var(--secondary)}.answer{display:none;color:var(--muted);margin-top:10px}.question.open .answer{display:block}
+    .tools{background:#eaf2f1;border-radius:22px;padding:35px}.tool-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.tool{background:#fff;padding:25px;border-radius:15px}.tool input{width:100%;padding:12px;border:1px solid #ccd6de;border-radius:8px;margin:7px 0 12px}.tool button{background:var(--primary);color:#fff;border:0;padding:11px 18px;border-radius:8px;cursor:pointer}.result{font-weight:700;margin-top:12px}
+    .about{background:#fff;border-radius:20px;padding:35px;box-shadow:var(--shadow)}.notice{font-size:.9rem;color:var(--muted);background:#f4f6f8;padding:14px;border-radius:10px}
+    footer{background:var(--primary);color:#fff;padding:35px 22px;text-align:center}.footer-small{opacity:.75;font-size:.85rem}
+    @media(max-width:800px){.hero-inner,.grid,.questions,.tool-grid{grid-template-columns:1fr}nav{flex-wrap:wrap}nav a{margin-left:8px}.hero{padding:50px 22px}.search{flex-direction:column;gap:7px}.search button{padding:13px}}
+  </style>
+</head>
+<body>
+<header>
+  <nav>
+    <div class="brand">Descomplica Contábil<span>Educação Contábil e Financeira para Pequenos Negócios</span></div>
+    <div>
+      <a href="#duvidas">Dúvidas</a><a href="#ferramentas">Ferramentas</a><a href="#sobre">Sobre</a>
+    </div>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <h1>A contabilidade não precisa ser complicada.</h1>
+      <p>Informações contábeis e financeiras explicadas de forma simples para ajudar pequenos negócios a tomar decisões com mais segurança.</p>
+      <div class="search">
+        <input id="searchInput" type="search" placeholder="Ex.: Como calcular meu lucro?">
+        <button onclick="buscar()">Buscar</button>
+      </div>
+      <p id="searchMessage" style="font-size:.9rem;margin-bottom:0"></p>
+    </div>
+    <div class="hero-card">
+      <h3>O que você encontra aqui?</h3>
+      <ul><li>Respostas para dúvidas frequentes</li><li>Conceitos contábeis em linguagem simples</li><li>Ferramentas para apoiar a gestão</li><li>Materiais gratuitos para pequenos negócios</li></ul>
+    </div>
+  </div>
+</section>
+
+<main>
+  <section id="duvidas">
+    <div class="section-title"><h2>Encontre sua dúvida</h2><p>Conteúdos organizados para facilitar sua busca.</p></div>
+    <div class="grid">
+      <div class="card"><div class="icon">💰</div><h3>Finanças</h3><p>Organização financeira, receitas, despesas e planejamento.</p></div>
+      <div class="card"><div class="icon">📊</div><h3>Gestão</h3><p>Controle financeiro, fluxo de caixa e tomada de decisões.</p></div>
+      <div class="card"><div class="icon">🧾</div><h3>Contabilidade</h3><p>Conceitos contábeis explicados de maneira acessível.</p></div>
+      <div class="card"><div class="icon">🏪</div><h3>Pequenos negócios</h3><p>Orientações para quem administra um pequeno empreendimento.</p></div>
+      <div class="card"><div class="icon">👤</div><h3>MEI</h3><p>Conteúdos introdutórios sobre organização e obrigações.</p></div>
+      <div class="card"><div class="icon">💵</div><h3>Preço de venda</h3><p>Aprenda a considerar custos e despesas na formação do preço.</p></div>
+    </div>
+
+    <div style="height:45px"></div>
+    <div class="section-title"><h2>Perguntas frequentes</h2><p>Clique em uma pergunta para visualizar uma resposta inicial.</p></div>
+    <div class="questions">
+      <div class="question" onclick="toggle(this)"><strong>Como calcular o lucro do meu negócio?</strong><div class="answer">De forma simplificada, lucro é o resultado obtido depois de considerar as receitas e os custos e despesas relacionados ao negócio. Para uma análise real, é importante registrar e classificar corretamente todos os valores.</div></div>
+      <div class="question" onclick="toggle(this)"><strong>O que é fluxo de caixa?</strong><div class="answer">É o controle das entradas e saídas de dinheiro ao longo do tempo. Ele ajuda o empreendedor a visualizar a situação financeira e planejar pagamentos e recebimentos.</div></div>
+      <div class="question" onclick="toggle(this)"><strong>Devo separar meu dinheiro pessoal do dinheiro da empresa?</strong><div class="answer">Sim. Separar as finanças facilita o controle, permite conhecer melhor o resultado do negócio e reduz a confusão entre despesas pessoais e empresariais.</div></div>
+      <div class="question" onclick="toggle(this)"><strong>Faturamento e lucro são a mesma coisa?</strong><div class="answer">Não. Faturamento representa as receitas de vendas/serviços em determinado período. Lucro é o resultado depois da consideração dos gastos e demais elementos pertinentes.</div></div>
+      <div class="question" onclick="toggle(this)"><strong>Como controlar minhas despesas?</strong><div class="answer">Registre todas as despesas, organize-as por categoria, acompanhe os vencimentos e compare os gastos com o planejamento do negócio.</div></div>
+      <div class="question" onclick="toggle(this)"><strong>Como definir o preço de venda?</strong><div class="answer">É necessário conhecer custos, despesas e demais componentes que influenciam o preço. Uma boa formação de preço deve considerar a realidade do negócio e do mercado.</div></div>
+    </div>
+  </section>
+
+  <section id="ferramentas" style="margin-top:70px">
+    <div class="section-title"><h2>Ferramentas</h2><p>Recursos simples para começar a organizar as finanças.</p></div>
+    <div class="tools">
+      <div class="tool-grid">
+        <div class="tool">
+          <h3>🧮 Calculadora de lucro simplificada</h3>
+          <label>Receita total (R$)</label><input id="receita" type="number" step="0.01" placeholder="10000">
+          <label>Custos e despesas (R$)</label><input id="gastos" type="number" step="0.01" placeholder="6500">
+          <button onclick="calcularLucro()">Calcular</button>
+          <div id="lucroResult" class="result"></div>
+        </div>
+        <div class="tool">
+          <h3>💵 Calculadora de margem</h3>
+          <label>Preço de venda (R$)</label><input id="preco" type="number" step="0.01" placeholder="100">
+          <label>Custo do produto (R$)</label><input id="custo" type="number" step="0.01" placeholder="60">
+          <button onclick="calcularMargem()">Calcular</button>
+          <div id="margemResult" class="result"></div>
+        </div>
+      </div>
+    </div>
+    <p class="notice">As ferramentas têm finalidade educativa e usam cálculos simplificados. Para situações específicas, procure orientação de um profissional habilitado.</p>
+  </section>
+
+  <section id="sobre" style="margin-top:70px">
+    <div class="section-title"><h2>Sobre o projeto</h2></div>
+    <div class="about">
+      <p><strong>Descomplica Contábil</strong> é uma proposta de plataforma digital de educação contábil e financeira voltada principalmente a pequenos negócios, MEIs, autônomos e à comunidade em geral.</p>
+      <p>A iniciativa busca democratizar o acesso a conhecimentos que podem contribuir para a organização financeira, o planejamento e a tomada de decisões.</p>
+      <p><strong>Projeto de extensão — Ciências Contábeis.</strong></p>
+      <p class="notice">Este conteúdo possui finalidade educacional e informativa. Não constitui, por si só, consultoria, parecer ou orientação profissional individualizada.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <strong>Descomplica Contábil</strong>
+  <div class="footer-small">Educação Contábil e Financeira para Pequenos Negócios</div>
+  <div class="footer-small">Projeto acadêmico de extensão — Ciências Contábeis</div>
+</footer>
+
+<script>
+function toggle(el){el.classList.toggle('open')}
+function calcularLucro(){
+  const r=parseFloat(document.getElementById('receita').value)||0;
+  const g=parseFloat(document.getElementById('gastos').value)||0;
+  document.getElementById('lucroResult').textContent='Resultado simplificado: R$ '+(r-g).toFixed(2).replace('.',',');
+}
+function calcularMargem(){
+  const p=parseFloat(document.getElementById('preco').value)||0;
+  const c=parseFloat(document.getElementById('custo').value)||0;
+  if(p<=0){document.getElementById('margemResult').textContent='Informe um preço de venda válido.';return}
+  const margem=((p-c)/p)*100;
+  document.getElementById('margemResult').textContent='Margem bruta simplificada: '+margem.toFixed(2).replace('.',',')+'%';
+}
+function buscar(){
+  const q=document.getElementById('searchInput').value.trim().toLowerCase();
+  const msg=document.getElementById('searchMessage');
+  if(!q){msg.textContent='Digite uma dúvida para começar.';return}
+  const terms=[
+    ['lucro','Como calcular o lucro do meu negócio?'],
+    ['fluxo','O que é fluxo de caixa?'],
+    ['separar','Devo separar meu dinheiro pessoal do dinheiro da empresa?'],
+    ['faturamento','Faturamento e lucro são a mesma coisa?'],
+    ['despesa','Como controlar minhas despesas?'],
+    ['preço','Como definir o preço de venda?']
+  ];
+  const found=terms.find(x=>q.includes(x[0]));
+  if(found){msg.textContent='Encontramos um conteúdo relacionado: '+found[1];document.getElementById('duvidas').scrollIntoView({behavior:'smooth'});}
+  else msg.textContent='Ainda estamos ampliando a base de dúvidas. Tente palavras como lucro, fluxo de caixa, despesas, faturamento ou preço.';
+}
+</script>
+</body>
+</html>
